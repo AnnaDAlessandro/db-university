@@ -1,8 +1,8 @@
-1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
-SELECT students.*
-FROM students
-JOIN degrees ON students.degree_id = degrees.department_id
-WHERE degrees.name = 'Economia';
+SELECT *
+FROM Degrees
+JOIN Students
+ON Degrees.Id = Students.Degree_Id
+WHERE Degrees.Name = 'Corso di Laurea in Economia';
 
 
 
@@ -38,7 +38,7 @@ JOIN exam_student ON students.id = exam_student.student_id
 JOIN courses ON exam_student.student_id = courses.id
 JOIN degrees ON courses.degree_id = degrees.id
 JOIN departments ON degrees.department_id = departments.id
-ORDER BY students.name ASC, students.surname ASC
+ORDER BY students.name , students.surname 
 
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
